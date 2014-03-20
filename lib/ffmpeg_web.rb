@@ -1,5 +1,5 @@
 require "ffmpeg_web/version"
 
-module FfmpegWeb
+module FFmpegWeb
   # Your code goes here...
 end

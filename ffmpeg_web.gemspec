@@ -5,7 +5,7 @@ require 'ffmpeg_web/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "ffmpeg_web"
-  spec.version       = FfmpegWeb::VERSION
+  spec.version       = FFmpegWeb::VERSION
   spec.authors       = ["Jason"]
   spec.email         = ["jsofokleous@googlemail.com"]
   spec.summary       = %q{TODO: Write a short summary. Required.}
