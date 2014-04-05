@@ -3,30 +3,18 @@ require 'spec_helper'
 describe FFmpegWeb::Transcoder do
   describe "#initialize" do
     it "sets the @input variable" do
-      input = "/path/to/input.mov"
-      output = "/path/to/output"
-
-      File.stub(:exists?).with(input).and_return(true)
-      File.stub(:exists?).with("/path/to").and_return(true)
-      FFmpegWeb::Transcoder.any_instance.stub(:is_valid?).and_return(true)
+      input = "#{fixture_path}/10 seconds.mov"
+      output = "#{fixture_path}/output.mp4"
 
       transcoder = FFmpegWeb::Transcoder.new(input, output)
       expect(transcoder.instance_variable_get(:@input)).to eq input
     end
     it "sets the @output variable" do
-      input = "/path/to/input.mov"
-      output = "/path/to/output"
-
-      File.stub(:exists?).with(input).and_return(true)
-      File.stub(:exists?).with("/path/to").and_return(true)
-      FFmpegWeb::Transcoder.any_instance.stub(:is_valid?).and_return(true)
+      input = "#{fixture_path}/10 seconds.mov"
+      output = "#{fixture_path}/output.mp4"
 
       transcoder = FFmpegWeb::Transcoder.new(input, output)
       expect(transcoder.instance_variable_get(:@output)).to eq output
-    end
-
-    context "when the input is not a video file" do
-      it "raises an exception"
     end
 
     context "when the input is an invalid video file" do
