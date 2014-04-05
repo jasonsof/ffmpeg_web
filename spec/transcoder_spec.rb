@@ -45,4 +45,24 @@ describe FFmpegWeb::Transcoder do
       end
     end
   end
+
+  describe "#duration" do
+    context "when the input is a valid video file" do
+      it "returns the videos duration in seconds" do
+        input = "#{fixture_path}/10 seconds.mov"
+        output = "#{fixture_path}/output.mp4"
+
+        transcoder = FFmpegWeb::Transcoder.new(input, output)
+        expect(transcoder.duration).to eq(10)
+      end
+
+      it "returns a Fixnum" do
+        input = "#{fixture_path}/10 seconds.mov"
+        output = "#{fixture_path}/output.mp4"
+
+        transcoder = FFmpegWeb::Transcoder.new(input, output)
+        expect(transcoder.duration).to be_a(Fixnum)
+      end
+    end
+  end
 end
