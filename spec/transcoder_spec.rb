@@ -8,6 +8,7 @@ describe FFmpegWeb::Transcoder do
 
       File.stub(:exists?).with(input).and_return(true)
       File.stub(:exists?).with("/path/to").and_return(true)
+      FFmpegWeb::Transcoder.any_instance.stub(:is_valid?).and_return(true)
 
       transcoder = FFmpegWeb::Transcoder.new(input, output)
       expect(transcoder.instance_variable_get(:@input)).to eq input
@@ -18,9 +19,25 @@ describe FFmpegWeb::Transcoder do
 
       File.stub(:exists?).with(input).and_return(true)
       File.stub(:exists?).with("/path/to").and_return(true)
+      FFmpegWeb::Transcoder.any_instance.stub(:is_valid?).and_return(true)
 
       transcoder = FFmpegWeb::Transcoder.new(input, output)
       expect(transcoder.instance_variable_get(:@output)).to eq output
+    end
+
+    context "when the input is not a video file" do
+      it "raises an exception"
+    end
+
+    context "when the input is an invalid video file" do
+      it "raises an exception" do
+        input = "#{fixture_path}/broken.mp4"
+        output = "#{fixture_path}/output.mp4"
+
+        expect {
+          transcoder = FFmpegWeb::Transcoder.new(input, output)
+          }.to raise_exception
+      end
     end
 
     context "when the input does not exist" do
