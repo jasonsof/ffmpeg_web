@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["jsofokleous@googlemail.com"]
   spec.summary       = %q{A Ruby wrapper for FFMpeg that allows you to transcode video into a web optimised format. }
   spec.description   = %q{}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/jasonsof/ffmpeg_web"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
