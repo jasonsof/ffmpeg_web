@@ -10,6 +10,7 @@ To find out more about this, take a look at FFmpeg's wiki page about it - https:
 Other things to note:
 - the output file will overwrite any file with the same name without warning
 - the moov atom will be moved to the beginning of the file to allow web playback to begin before the whole file has finished loading
+- FFmpeg must be installed 
 
 ## Installation
 
