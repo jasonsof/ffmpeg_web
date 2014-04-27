@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = FFmpegWeb::VERSION
   spec.authors       = ["Jason"]
   spec.email         = ["jsofokleous@googlemail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{A Ruby wrapper for FFMpeg that allows you to transcode video into a web optimised format. }
+  spec.description   = %q{}
   spec.homepage      = ""
   spec.license       = "MIT"
 
